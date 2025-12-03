@@ -1,0 +1,108 @@
+$primary-color: #007bff;
+$primary-hover: #0056b3;
+$secondary-color: #6c757d;
+$secondary-hover: #545b62;
+$white: #ffffff;
+$border-radius: 0.25rem;
+
+$padding-small: 0.25rem 0.5rem;
+$padding-medium: 0.5rem 1rem;
+$padding-large: 0.75rem 1.5rem;
+
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: none;
+  border-radius: $border-radius;
+  font-weight: 500;
+  font-family: inherit;
+  white-space: nowrap;
+  text-align: center;
+  text-decoration: none;
+  background-color: #764ba29f;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+
+  &:hover:not(.disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  background-color: #764ba2c5;
+
+  }
+  
+  &:active:not(.disabled) {
+    transform: scale(0.98);
+  }
+  
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba($primary-color, 0.25);
+  }
+  
+  &.disabled,
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+    pointer-events: none;
+  }
+}
+
+.small {
+  padding: $padding-small;
+  font-size: 0.875rem;
+}
+
+.medium {
+  padding: $padding-medium;
+  font-size: 1rem;
+}
+
+.large {
+  padding: $padding-large;
+  font-size: 1.125rem;
+}
+
+.loading {
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.spinner {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid transparent;
+  border-top-color: currentColor;
+  border-radius: 50%;
+  
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.buttonText {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 576px) {
+  .button {
+    width: 100%;
+  }
+  
+  .medium {
+    padding: 0.75rem 1rem;
+  }
+}

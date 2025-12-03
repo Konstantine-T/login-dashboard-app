@@ -1,0 +1,80 @@
+$header-bg: #ffffff;
+$header-border: #dee2e6;
+$text-primary: #212529;
+$text-secondary: #6c757d;
+$editor-color: #28a745;
+$viewer-color: #17a2b8;
+
+.header {
+  background-color: $header-bg;
+  border-bottom: 1px solid $header-border;
+  height: 70px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  @media (max-width: 768px) {
+    padding: 0 1rem;
+  }
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+
+.brandName {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: $text-primary;
+  
+  @media (max-width: 480px) {
+    display: none;
+  }
+}
+
+.userSection {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.userName {
+  font-size: 1rem;
+  font-weight: 500;
+  color: $text-primary;
+  
+  @media (max-width: 640px) {
+    display: none;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

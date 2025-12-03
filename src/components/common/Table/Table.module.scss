@@ -1,0 +1,224 @@
+$table-bg: #ffffff;
+$header-bg: #f8f9fa;
+$border-color: #dee2e6;
+$text-primary: #212529;
+$text-secondary: #6c757d;
+$hover-bg: #f8f9fa;
+$sort-active: #007bff;
+$edit-btn-color: #ffc107;
+$save-btn-color: #28a745;
+$cancel-btn-color: #dc3545;
+
+.tableWrapper {
+  width: 100%;
+  overflow-x: auto;
+
+  &::-webkit-scrollbar {
+    height: 8px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+    
+    &:hover {
+      background: #555;
+    }
+  }
+}
+
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: $table-bg;
+  min-width: 600px;
+}
+
+.thead {
+  background-color: $header-bg;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 2px solid $border-color;
+}
+
+.th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: $text-primary;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s ease;
+  
+  &:hover {
+    background-color: darken($header-bg, 5%);
+
+    .sortIcon {
+      opacity: 0.7;
+    }
+  }
+}
+
+.thContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.sortIcon {
+  font-size: 0.875rem;
+  opacity: 0.3;
+  transition: opacity 0.2s ease;
+}
+
+.sortIconActive {
+  color: $sort-active;
+  opacity: 1;
+  font-size: 1rem;
+  animation: bounce 0.3s ease;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+.tr {
+  border-bottom: 1px solid $border-color;
+  transition: background-color 0.2s ease;
+  
+  &:hover {
+    background-color: $hover-bg;
+  }
+  
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.td {
+  padding: 1rem;
+  color: $text-primary;
+  font-size: 0.95rem;
+  vertical-align: middle;
+}
+
+.itemName {
+  font-weight: 500;
+}
+
+.itemSize {
+  color: $text-secondary;
+  font-family: 'Courier New', monospace;
+}
+
+.date {
+  color: $text-secondary;
+  font-size: 0.875rem;
+}
+
+.priceDisplay {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.editBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.875rem;
+  color: lighten($text-secondary, 20%);
+  opacity: 1;
+  transition: color 0.2s ease;
+  padding: 0.25rem 0.5rem;
+  margin-left: 0.5rem;
+
+  &:hover {
+    color: $text-secondary;
+  }
+}
+
+.priceEdit {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.priceInput {
+  width: 100px;
+  padding: 0.25rem 0.5rem;
+  border: 2px solid $sort-active;
+  border-radius: 0.25rem;
+  font-size: 0.95rem;
+  outline: none;
+  
+  &:focus {
+    box-shadow: 0 0 0 3px rgba($sort-active, 0.2);
+  }
+  
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+.saveBtn {
+  background-color: $save-btn-color;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    background-color: darken($save-btn-color, 10%);
+    transform: scale(1.1);
+  }
+}
+
+.cancelBtn {
+  background-color: $cancel-btn-color;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    background-color: darken($cancel-btn-color, 10%);
+    transform: scale(1.1);
+  }
+}
+
+.noData {
+  text-align: center;
+  padding: 3rem;
+  color: $text-secondary;
+  font-style: italic;
+}

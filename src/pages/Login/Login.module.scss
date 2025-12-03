@@ -1,0 +1,66 @@
+$bg-gradient-start: #667eeab0;
+$bg-gradient-end: #764ba2b4;
+$card-bg: #ffffff;
+$text-white: #ffffff;
+
+.loginPage {
+  min-height: 100vh;
+  background: linear-gradient(135deg, $bg-gradient-start 0%, $bg-gradient-end 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.loginCard {
+  background-color: $card-bg;
+  border-radius: 0.75rem;
+  box-shadow: 
+    0 10px 25px rgba(0, 0, 0, 0.1),
+    0 6px 10px rgba(0, 0, 0, 0.08);
+  max-width: 500px;
+  width: 100%;
+  overflow: hidden;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding: 0.5rem;
+  }
+  
+  .loginCard {
+    border-radius: 0.5rem;
+  }
+}
+
+@media (min-width: 769px) {
+  .loginCard {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.15),
+        0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+  }
+}
